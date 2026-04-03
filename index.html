@@ -1,0 +1,565 @@
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Владислав Полочанский | Генеральный директор</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f4f7fc;
+            color: #1a2c3e;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* Градиентный заголовок с прозрачностью */
+        .gradient-title {
+            font-size: 3.2rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #0B2B40, #1A6D7A, #00A896);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: shimmer 6s ease infinite;
+            margin-bottom: 0.5rem;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .subhead {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #2c5f6e;
+            border-left: 4px solid #00A896;
+            padding-left: 1rem;
+            margin: 1rem 0 1.5rem 0;
+        }
+
+        /* карточки общие */
+        .card {
+            background: white;
+            border-radius: 28px;
+            padding: 1.8rem;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.25s ease;
+            height: 100%;
+            border: 1px solid rgba(0,168,150,0.1);
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+            border-color: rgba(0,168,150,0.3);
+        }
+
+        /* секции */
+        section {
+            margin-bottom: 3.5rem;
+        }
+
+        .section-title {
+            font-size: 1.9rem;
+            font-weight: 700;
+            margin-bottom: 1.8rem;
+            position: relative;
+            display: inline-block;
+            background: linear-gradient(120deg, #1A6D7A, #0B2B40);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: #00A896;
+            border-radius: 4px;
+        }
+
+        /* опыт работы */
+        .job-card {
+            margin-bottom: 2rem;
+            background: white;
+            border-radius: 28px;
+            padding: 1.5rem;
+            transition: all 0.2s;
+            border-left: 6px solid #00A896;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.03);
+        }
+        .job-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 1rem;
+        }
+        .job-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0B2B40;
+        }
+        .job-date {
+            font-weight: 500;
+            color: #5f7f8c;
+            background: #eef2f5;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+        }
+        .company {
+            font-weight: 600;
+            color: #1A6D7A;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            display: inline-block;
+            background: #E0F2F0;
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+        }
+        .achievement-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+        .achievement-list li {
+            margin-bottom: 0.7rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.7rem;
+        }
+        .achievement-list li i {
+            color: #00A896;
+            font-size: 1.2rem;
+            margin-top: 0.2rem;
+        }
+        .bold-number {
+            font-weight: 800;
+            color: #1A6D7A;
+        }
+
+        /* сетка навыков карточки с анимацией */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        .skill-card {
+            background: white;
+            padding: 1.2rem 1rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            box-shadow: 0 5px 12px rgba(0,0,0,0.03);
+            border-bottom: 3px solid #e2e8f0;
+        }
+        .skill-card i {
+            font-size: 2rem;
+            color: #00A896;
+            margin-bottom: 0.7rem;
+            display: inline-block;
+        }
+        .skill-card h4 {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.4rem;
+        }
+        .skill-card p {
+            font-size: 0.85rem;
+            color: #4b6a78;
+        }
+        .skill-card:hover {
+            transform: translateY(-8px);
+            border-bottom-color: #00A896;
+            box-shadow: 0 20px 25px -12px rgba(0,168,150,0.2);
+        }
+
+        /* кейсы — выделенные блоки */
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.8rem;
+        }
+        .case-block {
+            background: linear-gradient(145deg, #ffffff, #f8fdfc);
+            border-radius: 28px;
+            padding: 1.5rem;
+            border: 1px solid rgba(0,168,150,0.25);
+            transition: all 0.2s;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.03);
+        }
+        .case-block:hover {
+            transform: scale(1.02);
+            border-color: #00A896;
+            background: white;
+        }
+        .case-icon {
+            font-size: 2rem;
+            color: #1A6D7A;
+            margin-bottom: 1rem;
+        }
+        .case-block h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+        }
+        .case-metric {
+            font-weight: 800;
+            color: #0B2B40;
+            background: #E6F4F1;
+            display: inline-block;
+            padding: 0.2rem 0.8rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            margin-top: 0.8rem;
+        }
+
+        /* теги / инструменты */
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1.2rem;
+        }
+        .tag {
+            background: #eef2f5;
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #1A2c3e;
+            transition: 0.2s;
+            cursor: default;
+            border: 1px solid transparent;
+        }
+        .tag:hover {
+            background: #00A896;
+            color: white;
+            transform: translateY(-2px);
+            border-color: #008b7a;
+            box-shadow: 0 4px 8px rgba(0,168,150,0.2);
+        }
+
+        /* образование */
+        .edu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1.2rem;
+        }
+        .edu-item {
+            background: white;
+            border-radius: 20px;
+            padding: 1rem 1.2rem;
+            transition: 0.2s;
+            border-left: 3px solid #00A896;
+        }
+        .edu-item h4 {
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+        .edu-item p {
+            font-size: 0.85rem;
+            color: #4b6a78;
+        }
+
+        /* контакты */
+        .contact-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            background: #ffffffcc;
+            backdrop-filter: blur(2px);
+            border-radius: 60px;
+            padding: 0.8rem 1.5rem;
+            margin: 1rem 0 2rem 0;
+            justify-content: flex-start;
+            align-items: center;
+            border: 1px solid rgba(0,168,150,0.3);
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-weight: 500;
+        }
+        .contact-item i {
+            font-size: 1.3rem;
+            color: #00A896;
+        }
+        .contact-item a {
+            text-decoration: none;
+            color: #1A2c3e;
+            transition: 0.2s;
+        }
+        .contact-item a:hover {
+            color: #00A896;
+        }
+
+        footer {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #cbdbe2;
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            color: #5f7f8c;
+        }
+
+        /* адаптивность */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.2rem;
+            }
+            .gradient-title {
+                font-size: 2.3rem;
+            }
+            .section-title {
+                font-size: 1.7rem;
+            }
+            .job-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            .contact-bar {
+                border-radius: 30px;
+                flex-direction: column;
+                align-items: flex-start;
+                background: #f8fafc;
+            }
+        }
+
+        /* цитата */
+        .quote {
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #2c5f6e;
+            background: #E0F2F0;
+            padding: 0.8rem 1.5rem;
+            border-radius: 100px;
+            display: inline-block;
+            margin: 1rem 0;
+        }
+
+        hr {
+            margin: 1rem 0;
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, #cbdbe2, transparent);
+        }
+        .highlight {
+            font-weight: 800;
+            color: #0B2B40;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- Заголовок с градиентным эффектом -->
+    <div style="margin-bottom: 1rem;">
+        <h1 class="gradient-title">ВЛАДИСЛАВ<br>ПОЛОЧАНСКИЙ</h1>
+        <div class="subhead">ГЕНЕРАЛЬНЫЙ ДИРЕКТОР | АНТИКРИЗИСНЫЙ УПРАВЛЕНЕЦ | ТРАНСФОРМАЦИЯ</div>
+        <div class="quote">
+            <i class="fas fa-chart-line" style="margin-right: 8px;"></i> «Хороший бизнес описывается на листе А4»
+        </div>
+    </div>
+
+    <!-- Контакты -->
+    <div class="contact-bar">
+        <div class="contact-item"><i class="fas fa-phone-alt"></i> +7 (916) 199-45-30</div>
+        <div class="contact-item"><i class="fab fa-telegram"></i> <a href="https://t.me/pivmsk" target="_blank">t.me/pivmsk</a></div>
+        <div class="contact-item"><i class="fas fa-envelope"></i> v.polochanskiy@example.com</div>
+        <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Москва / РФ</div>
+    </div>
+
+    <!-- Обо мне / профиль -->
+    <section>
+        <h2 class="section-title">ОБО МНЕ</h2>
+        <div class="card" style="background: linear-gradient(105deg, #fff 0%, #fafefc 100%);">
+            <p style="font-size: 1.1rem; font-weight: 500;">🏆 <strong>20+ лет</strong> управляю производственными и инфраструктурными компаниями. Энергетика, промышленность, логистика, ритейл.</p>
+            <p style="margin-top: 1rem;">Одна из крупнейших электроэнергетических компаний с капитализацией 554,6 млрд руб., обеспечиваю генерацию >11% электроэнергии в ЕЭС РФ. Ответственность за организацию с 1,2 млн потребителей электро- и теплоснабжения. Внедряю системное развитие, вовлёк 50 000 сотрудников в создание ценности.</p>
+            <hr>
+            <div><i class="fas fa-bullseye" style="color:#00A896;"></i> <strong>Цель:</strong> создавать прозрачный, масштабируемый бизнес, который описывается на одном листе.</div>
+        </div>
+    </section>
+
+    <!-- ОПЫТ РАБОТЫ с карточками достижений -->
+    <section>
+        <h2 class="section-title">ОПЫТ РАБОТЫ</h2>
+        
+        <!-- Интер РАО -->
+        <div class="job-card">
+            <div class="job-header">
+                <div class="job-title">Генеральный директор / Исполнительный директор ДЗО</div>
+                <div class="job-date">Февраль 2009 — настоящее время</div>
+            </div>
+            <div class="company"><i class="fas fa-bolt"></i> Группа «Интер РАО» | Капитализация 554,6 млрд ₽</div>
+            <ul class="achievement-list">
+                <li><i class="fas fa-chart-line"></i> <strong>+25 млрд ₽ прибыли</strong> — команда «звёзд» под моим управлением</li>
+                <li><i class="fas fa-users"></i> Внедрение системы развития и вовлечение <strong>50 000 сотрудников</strong> в создание ценности</li>
+                <li><i class="fas fa-merge"></i> Объединил 4 компании в АО с <strong>16 000 сотрудников</strong>, выстроил OK, систему мотивации, конструктив с профсоюзами</li>
+                <li><i class="fas fa-chart-simple"></i> Участие в программе нового строительства (CAPEX/OPEX) <strong>111 млрд ₽</strong> → рост EBITDA с 13 до <span class="bold-number">50,7 млрд ₽</span> за 4 года</li>
+                <li><i class="fas fa-database"></i> Разработал систему бюджетного управления на базе <strong>УПП 1С (ERP)</strong> для 18 филиалов (1 200+ пользователей), централизованное казначейство с контролем платежей >350 млрд ₽</li>
+                <li><i class="fas fa-train"></i> Логистический проект: оптимизация цепочек поставок, снижение оборота ж/д вагона на <strong>15%</strong>, эффект >370 млн ₽</li>
+                <li><i class="fas fa-handshake"></i> Перестроил систему закупок (223-ФЗ), 4-кратный рост экономии, расширение воронки поставщиков</li>
+                <li><i class="fas fa-chart-pie"></i> Передовой проект <strong>«Профиль здоровья компании»</strong> — эталон диагностики бизнеса</li>
+            </ul>
+        </div>
+
+        <!-- ТГК-11 -->
+        <div class="job-card">
+            <div class="job-header">
+                <div class="job-title">Генеральный директор / Топ-менеджмент</div>
+                <div class="job-date">Период руководства</div>
+            </div>
+            <div class="company"><i class="fas fa-fire"></i> ТГК-11 | Группа компаний</div>
+            <ul class="achievement-list">
+                <li><i class="fas fa-chart-line"></i> Антикризисный план: <strong>рост EBITDA в 2 раза → до 6 млрд ₽</strong> (5% общей EBITDA ГК)</li>
+                <li><i class="fas fa-handshake"></i> Стратегическое партнёрство с «Газпром нефть» — <strong>2,5 млрд ₽</strong> доп. годовой выручки (5-летний контракт)</li>
+                <li><i class="fas fa-shield-alt"></i> Программа повышения надёжности: снижение потерь в <strong>12 раз</strong> (с 450 до 37 млн ₽)</li>
+                <li><i class="fas fa-user-check"></i> Рост сбора дебиторской задолженности до <strong>98,5%</strong> → эффект >250 млн ₽ (10+ клиентских инициатив)</li>
+                <li><i class="fas fa-graduation-cap"></i> Программа «Лидеры перемен»: кадровый резерв из 150 руководителей, обновление топ-команды за 2 года</li>
+                <li><i class="fas fa-chalkboard-user"></i> Открыл «Школу начальников цехов», ускорил трансформацию на 8 производственных площадках</li>
+                <li><i class="fas fa-leaf"></i> Бережливое производство: снижение потерь на <strong>5 млн тонн (-20%)</strong></li>
+            </ul>
+        </div>
+
+        <!-- СибирьЭнерго / Региональные электрические сети -->
+        <div class="job-card">
+            <div class="job-header">
+                <div class="job-title">Первый заместитель генерального директора</div>
+                <div class="job-date">Июль 2003 – Февраль 2009</div>
+            </div>
+            <div class="company"><i class="fas fa-plug"></i> «СибирьЭнерго», «Региональные электрические сети»</div>
+            <ul class="achievement-list">
+                <li><i class="fas fa-chart-line"></i> Централизовал финансовое управление <strong>6 компаниями с оборотом 50 млрд ₽</strong> через договор управления с УК</li>
+                <li><i class="fas fa-building"></i> Провёл реорганизацию: выделение 8 обособленных подразделений в ЮЛ ЗАО «Региональные электрические сети» (обеспечивает энергоснабжение субъекта СФО до сих пор)</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- КЛЮЧЕВЫЕ КЕЙСЫ / ВЫДЕЛЕННЫЕ БЛОКИ (Примеры) -->
+    <section>
+        <h2 class="section-title">ПРОРЫВНЫЕ КЕЙСЫ</h2>
+        <div class="cases-grid">
+            <div class="case-block">
+                <div class="case-icon"><i class="fas fa-chart-line"></i></div>
+                <h3>EBITDA +290% за 4 года</h3>
+                <p>Инвестиционная программа 111 млрд руб. (CAPEX/OPEX) привела к росту EBITDA с 13 до 50,7 млрд руб. Системный подход к стройке и модернизации.</p>
+                <div class="case-metric">Эффект: 37,7 млрд ₽ прирост</div>
+            </div>
+            <div class="case-block">
+                <div class="case-icon"><i class="fas fa-chart-pie"></i></div>
+                <h3>«Профиль здоровья компании»</h3>
+                <p>Передовой российский проект диагностики бизнеса, позволяющий измерить эффективность и вовлечь персонал в улучшения.</p>
+                <div class="case-metric">Отраслевой эталон</div>
+            </div>
+            <div class="case-block">
+                <div class="case-icon"><i class="fas fa-cash-register"></i></div>
+                <h3>Цифровое казначейство</h3>
+                <p>Централизация платежей >350 млрд руб., 1С:ERP для 18 филиалов, 1200 пользователей. Рост прозрачности и ликвидности.</p>
+                <div class="case-metric">+0% потерь на кассовых разрывах</div>
+            </div>
+            <div class="case-block">
+                <div class="case-icon"><i class="fas fa-train"></i></div>
+                <h3>Логистическая оптимизация</h3>
+                <p>Снижение оборота ж/д вагона на 15%, экономия более 370 млн рублей за счёт перестройки цепочек поставок.</p>
+                <div class="case-metric">15% ускорение доставки</div>
+            </div>
+            <div class="case-block">
+                <div class="case-icon"><i class="fas fa-users"></i></div>
+                <h3>Объединение 4 компаний → 16 000 сотрудников</h3>
+                <p>Интеграция юрлиц, единая оргструктура, система оплаты труда, бесконфликтное взаимодействие с профсоюзами.</p>
+                <div class="case-metric">Производственная программа выполнена в срок</div>
+            </div>
+            <div class="case-block">
+                <div class="case-icon"><i class="fas fa-chalkboard"></i></div>
+                <h3>Школа начальников цехов</h3>
+                <p>Ускорение трансформации на 8 крупных площадках, кадровый резерв 150+ руководителей, снижение потерь на 20%.</p>
+                <div class="case-metric">5 млн тонн экономии</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- КАРТОЧКИ НАВЫКОВ (с анимацией) -->
+    <section>
+        <h2 class="section-title">КЛЮЧЕВЫЕ НАВЫКИ</h2>
+        <div class="skills-grid">
+            <div class="skill-card"><i class="fas fa-chart-line"></i><h4>Стратег. менеджмент</h4><p>Управление изменениями, M&A, стратегическое планирование</p></div>
+            <div class="skill-card"><i class="fas fa-chart-simple"></i><h4>Финансы & P&L</h4><p>EBITDA, CF, бюджетирование, казначейство, CAPEX/OPEX</p></div>
+            <div class="skill-card"><i class="fas fa-cubes"></i><h4>Инвестпрограммы</h4><p>Новое строительство, модернизация, цифровизация активов</p></div>
+            <div class="skill-card"><i class="fas fa-people-arrows"></i><h4>Антикризисный менеджмент</h4><p>Реструктуризация, повышение операционной эффективности</p></div>
+            <div class="skill-card"><i class="fas fa-comments"></i><h4>Лидерство & переговоры</h4><p>Высокие коммуникации, работа с профсоюзами и госорганами</p></div>
+            <div class="skill-card"><i class="fas fa-chart-simple"></i><h4>Отраслевая насмотренность</h4><p>Энергетика, промышленность, ритейл, логистика</p></div>
+            <div class="skill-card"><i class="fas fa-language"></i><h4>Английский язык</h4><p>Уровень А2 — деловая переписка, базовая коммуникация</p></div>
+        </div>
+    </section>
+
+    <!-- СЕТКА ИНСТРУМЕНТОВ / ТЕГИ -->
+    <section>
+        <h2 class="section-title">ТЕХНОЛОГИИ & ИНСТРУМЕНТЫ</h2>
+        <div class="tags-container">
+            <span class="tag">1С:УПП (ERP)</span>
+            <span class="tag">Централизованное казначейство</span>
+            <span class="tag">223-ФЗ / Закупки</span>
+            <span class="tag">Бережливое производство</span>
+            <span class="tag">Управление изменениями</span>
+            <span class="tag">P&L / EBITDA / CF</span>
+            <span class="tag">CAPEX / OPEX моделирование</span>
+            <span class="tag">M&A сделки</span>
+            <span class="tag">Agile & лидерство</span>
+            <span class="tag">BI аналитика</span>
+            <span class="tag">Кадровый резерв</span>
+            <span class="tag">Управление проектами (PMO)</span>
+            <span class="tag">CRM / Клиентский сервис</span>
+            <span class="tag">Стратегические партнёрства</span>
+        </div>
+    </section>
+
+    <!-- ОБРАЗОВАНИЕ -->
+    <section>
+        <h2 class="section-title">ОБРАЗОВАНИЕ & РАЗВИТИЕ</h2>
+        <div class="edu-grid">
+            <div class="edu-item"><h4>📘 Корпоративный университет Сбербанка</h4><p>Digital Strategy, Менеджмент проектов в сфере ИТ</p></div>
+            <div class="edu-item"><h4>🎓 Новосибирский государственный технический университет</h4><p>Менеджмент в энергетической отрасли</p></div>
+            <div class="edu-item"><h4>🇬🇧 MBA, The Open University (UK)</h4><p>Master of Business Administration</p></div>
+            <div class="edu-item"><h4>🚆 Сибирская государственная академия путей сообщения</h4><p>Экономика и управление на транспорте</p></div>
+        </div>
+    </section>
+
+    <!-- ДОПОЛНИТЕЛЬНЫЙ БЛОК С ПРИНЦИПАМИ -->
+    <section>
+        <div class="card" style="background: linear-gradient(120deg, #0B2B40 0%, #1A6D7A 100%); color: white; text-align: center;">
+            <i class="fas fa-chart-line" style="font-size: 2rem; opacity: 0.8;"></i>
+            <p style="margin-top: 0.5rem; font-weight: 500; letter-spacing: 0.3px;">«Хороший бизнес описывается на листе А4. За 20+ лет я доказал это цифрами: 25 млрд прибыли, 50 000 вовлечённых сотрудников, 4-кратная экономия в закупках, трансформация EBITDA в 2–5 раз.»</p>
+            <div style="margin-top: 0.8rem; font-size: 0.85rem;">— Владислав Полочанский, генеральный директор</div>
+        </div>
+    </section>
+
+    <footer>
+        <i class="fas fa-file-alt"></i> Владислав Полочанский — экспертиза в управлении энергоактивами, промышленной трансформации и построении эффективных команд. 2025
+    </footer>
+</div>
+</body>
+</html>
